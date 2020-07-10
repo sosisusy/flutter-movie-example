@@ -54,6 +54,11 @@ class _HomePageState extends State<HomePage> {
                             itemWidth: 150,
                             itemData: movieData["data"]["movies"],
                           ),
+                          MovieList(
+                            title: "Featured",
+                            itemWidth: 150,
+                            itemData: movieData["data"]["movies"],
+                          ),
                         ],
                       ),
                     ),

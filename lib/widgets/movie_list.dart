@@ -55,7 +55,7 @@ class MovieList extends StatelessWidget {
   // 리스트 빌드
   Container _buildList() {
     return Container(
-      height: 268,
+      height: 272,
       margin: EdgeInsets.symmetric(
         vertical: 10,
       ),

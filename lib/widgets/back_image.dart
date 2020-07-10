@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class BackImage extends StatelessWidget {
   const BackImage({
@@ -16,9 +17,9 @@ class BackImage extends StatelessWidget {
       height: height + MediaQuery.of(context).padding.top ??
           MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: Image(
-        image: NetworkImage(imageUrl),
-        fit: BoxFit.cover,
+      child: CachedNetworkImage(
+        imageUrl: imageUrl,
+        fit: BoxFit.fill,
       ),
     );
   }

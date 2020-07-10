@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:cached_network_image/cached_network_image.dart";
 
 class MovieListItem extends StatelessWidget {
   MovieListItem({
@@ -59,8 +60,12 @@ class MovieListItem extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Container(
-          child: Image(
-            image: NetworkImage(postImageUrl),
+          // child: Image(
+          //   image: NetworkImage(postImageUrl),
+          //   fit: BoxFit.fill,
+          // ),
+          child: CachedNetworkImage(
+            imageUrl: postImageUrl,
             fit: BoxFit.fill,
           ),
         ),
@@ -108,14 +113,14 @@ class MovieListItem extends StatelessWidget {
             width: width,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 _buildCategoryBox(),
                 Row(
                   children: [
                     Icon(
                       Icons.favorite_border,
-                      size: 15,
+                      size: 16,
                     ),
                     SizedBox(
                       width: 5,
@@ -123,7 +128,7 @@ class MovieListItem extends StatelessWidget {
                     Text(
                       "$rating",
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
